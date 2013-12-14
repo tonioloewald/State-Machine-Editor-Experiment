@@ -27,14 +27,18 @@
 .state:hover {
     stroke: #888;
 }
-.state-link {
+.state-link, .state-lock.on {
     stroke: none;
     fill: #888;
 }
-.state-link:hover {
+.state-lock {
+    stroke: none;
+    fill: #ccc;
+}
+.state-link:hover, .state-lock:hover {
     fill: #222;
 }
-.state-link:active {
+.state-link:active, .state-lock:active {
     fill: #88f;
 }
 .connection {
