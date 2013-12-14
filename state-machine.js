@@ -312,3 +312,19 @@ function newState(){
         new State(name);
     }
 }
+
+// TODO work around / fix bug in raphaeljs with respect to view scaling and drag coordinates
+// TODO panning the view
+// TODO preserve (panned) center on zoom
+function zoomView(scale){
+    scale = 1.0 / (scale || 1.0);
+    var w = 800 * scale,
+        h = 600 * scale,
+        x = (800 - w) * 0.5;
+        y = (600 - h) * 0.5;
+    paper._origin = {x: x, y: y};
+    paper._scale = scale;
+    paper.setViewBox(x,y,w,h);
+}
+
+zoomView(1.0);

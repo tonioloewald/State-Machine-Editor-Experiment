@@ -1,3 +1,7 @@
+body {
+    font-family: Helvetica, Arial, Sans-serif;
+    font-size: 13px;
+}
 #flowchart {
     border: 1px solid #aaa;
     background-color: #ddd;

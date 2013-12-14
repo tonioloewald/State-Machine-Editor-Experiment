@@ -8,6 +8,10 @@
 <body>
     <div id="flowchart"></div>
     <button onmouseup="newState()">New State</button>
+    <label>
+        View Scale:
+        <input type="range" name="zoom" value="1.0" min="0.25" max="4" step="0.25" onchange="zoomView(this.value)">
+    </label>
     <script src="raphael-min.js"></script>
     <script src="state-machine.js"></script>
 </body>
