@@ -1,0 +1,53 @@
+#flowchart {
+    border: 1px solid #aaa;
+    background-color: #ddd;
+    width: 800px;
+    height: 600px;
+}
+.button {
+    stroke: #888;
+    fill: #fff;
+    opacity: 0.5;
+    fill-opacity: 0.5;
+}
+.button:hover {
+    opacity: 1.0;
+    fill-opacity: 1.0;
+    box-shadow: 0 0 0 4px white;
+}
+.button:active {
+    fill: #ccf;
+    stroke: #88f;
+}
+.state {
+    stroke: #aaa;
+    fill: #fff;
+    border: 2px;
+}
+.state:hover {
+    stroke: #888;
+}
+.state-link {
+    stroke: none;
+    fill: #888;
+}
+.state-link:hover {
+    fill: #222;
+}
+.state-link:active {
+    fill: #88f;
+}
+.connection {
+    stroke: #888;
+    opacity: 0.5;
+    stroke-width: 2px;
+}
+.connection:hover {
+    stroke: #222;
+}
+.state-caption {
+    fill: #444;
+}
+.connection-caption {
+    fill: #444;
+}
