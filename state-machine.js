@@ -1,7 +1,7 @@
-/*jshint laxbreak:true, nonew:false */
+/*jshint laxbreak:true, nonew:false, asi:true */
 /*global Raphael */
 
-"use strict";
+"use strict"
 
 var icons = {
     plus: 'M25.979,12.896 19.312,12.896 19.312,6.229 12.647,6.229 12.647,12.896 5.979,12.896 5.979,19.562 12.647,19.562 12.647,26.229 19.312,26.229 19.312,19.562 25.979,19.562z',
@@ -17,8 +17,8 @@ function makeIcon(path, x, y, w, h){
 }
 
 function placeIcon(icon, x, y, w, h){
-    var bounds = icon.getBBox();
-    var t = "T" + (x - bounds.x) + "," + (y - bounds.y);
+    var bounds = icon.getBBox(),
+        t = "T" + (x - bounds.x) + "," + (y - bounds.y);
     if( w && h ){
         t += ",s" + Math.min(w/bounds.width, h/bounds.height);
     }
@@ -115,7 +115,7 @@ State.prototype.makeLock = function(){
     if( this.locked ){
         this.lockButton.node.classList.add('on');
     }
-}
+};
 
 State.prototype.makeLink = function(){
     var self = this;
@@ -186,7 +186,7 @@ Connection.remove = function(what){
     }
     what.path.remove();
     what.caption.remove();
-}
+};
 
 Connection.prototype.drawTempLineTo = function(x, y){
     var bounds = this.fromState.rect.getBBox(),
@@ -291,6 +291,7 @@ function connectingPath(x0, y0, x1, y1, outDirection, inDirection){
 
 var paper = Raphael("flowchart", 800, 600);
 
+// TODO constructor function State.make() that hides new
 var start = new State("Unassigned", 30, 30, true);
 var middle = new State("Under Review", 300, 200);
 var review = new State("Internal Review", 600, 100);
@@ -298,6 +299,7 @@ var limbo = new State("Limbo", 250, 350);
 var dead = new State("Dead", 200, 500);
 var end = new State("Registered", 660, 500, true);
 
+// TODO constructor function State.connect() that accepts names
 new Connection(start,middle,"Assigned to Attorney");
 new Connection(middle,limbo,"Rejected");
 new Connection(limbo,dead,"After 6 Months");
