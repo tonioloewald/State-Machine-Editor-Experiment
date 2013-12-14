@@ -209,7 +209,8 @@ Connection.prototype.update = function(){
     
     this.path.attr('path', connectingPath(x0, y0, x1, y1, outDirection, inDirection));
     textLoc = this.path.getPointAtLength( this.path.getTotalLength() * 0.25 );
-    this.caption.attr('x', textLoc.x).attr('y', textLoc.y);
+    // TODO might need to optimize setting text all the time
+    this.caption.attr('x', textLoc.x).attr('y', textLoc.y).attr('text',this.name);
 };
 
 Connection.prototype.finalize = function(){
@@ -238,7 +239,6 @@ Connection.prototype.edit = function(){
     var name = prompt("Enter new name for connection:", this.name);
     if( name ){
         this.name = name;
-        this.caption.attr('text', this.name);
         this.update();
     }
 };
