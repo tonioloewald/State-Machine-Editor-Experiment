@@ -320,7 +320,7 @@ function zoomView(scale){
     scale = 1.0 / (scale || 1.0);
     var w = 800 * scale,
         h = 600 * scale,
-        x = (800 - w) * 0.5;
+        x = (800 - w) * 0.5,
         y = (600 - h) * 0.5;
     paper._origin = {x: x, y: y};
     paper._scale = scale;
